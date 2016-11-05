@@ -3,20 +3,28 @@ using System.Collections;
 
 public class MoonmenControl : MonoBehaviour {
 
-	Transform player;
+	Transform oommen;
+	Transform moonmen;
+
 	NavMeshAgent nav;
-	public float speed;
+	private float speed;
+	private float distFromPlayer;
 
 
 	void Awake () {
-		player = GameObject.FindGameObjectWithTag ("Player").transform;
-
+		oommen = GameObject.FindGameObjectWithTag ("oommen").transform;
+		moonmen = transform;
 		nav = GetComponent<NavMeshAgent> ();
 	}
 
 
 	void Update () {
-		nav.SetDestination (player.position);
+
+		distFromPlayer = Vector3.Distance(oommen.position, moonmen.position);
+
+		if (distFromPlayer < 20){
+			nav.SetDestination (oommen.position);
+		}
 	}
 
 
