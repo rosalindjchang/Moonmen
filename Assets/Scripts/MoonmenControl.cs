@@ -5,6 +5,7 @@ public class MoonmenControl : MonoBehaviour {
 
 	Transform player;
 	NavMeshAgent nav;
+	public float speed;
 
 
 	void Awake () {
@@ -12,6 +13,7 @@ public class MoonmenControl : MonoBehaviour {
 
 		nav = GetComponent<NavMeshAgent> ();
 	}
+
 
 	void Update () {
 		nav.SetDestination (player.position);
