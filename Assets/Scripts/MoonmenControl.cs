@@ -5,6 +5,7 @@ public class MoonmenControl : MonoBehaviour {
 
 	Transform oommen;
 	Transform moonmen;
+	Transform player;
 
 	NavMeshAgent nav;
 	private float speed;
@@ -12,6 +13,7 @@ public class MoonmenControl : MonoBehaviour {
 
 
 	void Awake () {
+		player = GameObject.FindGameObjectWithTag ("Player").transform;
 		oommen = GameObject.FindGameObjectWithTag ("oommen").transform;
 		moonmen = transform;
 		nav = GetComponent<NavMeshAgent> ();
@@ -20,9 +22,9 @@ public class MoonmenControl : MonoBehaviour {
 
 	void Update () {
 
-		distFromPlayer = Vector3.Distance(oommen.position, moonmen.position);
+		distFromPlayer = Vector3.Distance(player.position, moonmen.position);
 
-		if (distFromPlayer < 20){
+		if (distFromPlayer < 30){
 			nav.SetDestination (oommen.position);
 		}
 	}
