@@ -20,6 +20,8 @@ public class WorldBuilder : MonoBehaviour {
 		TerrainTop = TerrainBottom + TerrainLength;
 
 		InstantiatefattreePosition ("tree", 300, 0f);
+		InstantiatefattreePosition ("oommen", 300, 0f);
+
 		InstantiateRandomPosition ("talltree", 300, 0f);
 		InstantiatefattreePosition ("fattree", 50, 0f);
 	}
