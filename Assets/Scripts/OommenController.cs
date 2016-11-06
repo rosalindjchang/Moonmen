@@ -4,55 +4,45 @@ using System.Collections;
 public class OommenController : MonoBehaviour {
 
 	Transform player;
+	Transform moonmen;
 	Transform oommen;
+	public GameObject oommenBod;
 
 	NavMeshAgent nav;
 	private float speed;
+	private float distBetweenMoonOom;
 	private float distFromPlayer;
-	private float timeToChangeDirection;
-
+	private Animator oommenController;
+	Vector3 randomPoint; 
+	Transform getPos;
 
 	void Awake () {
 		player = GameObject.FindGameObjectWithTag ("Player").transform;
+		//randomPoint = new Vector3(Random.Range(-8.0F, 8.0F), 0, Random.Range(-4.5F, 4.5F));
+		randomPoint = Random.insideUnitSphere*200;
+		randomPoint.y = 0;
+		//moonmen = GameObject.FindGameObjectWithTag ("moonmen").transform;
 		oommen = transform;
 		nav = GetComponent<NavMeshAgent> ();
 
 	}
-
-	void Start () {
-		ChangeDirection();
-
-	}
-
+		
 
 	void Update () {
 
 		distFromPlayer = Vector3.Distance(player.position, oommen.position);
+		//distBetweenMoonOom = Vector3.Distance (moonmen.position, oommen.position);
 
-		if (distFromPlayer < 15) {
+		if (distFromPlayer < 15f) {
 			nav.SetDestination (player.position);
 		} else {
-			
-			timeToChangeDirection -= Time.deltaTime;
-
-			if (timeToChangeDirection <= 0) {
-				ChangeDirection();
-			}
-
-			GetComponent<Rigidbody>().velocity = transform.up * 2;
-
+			nav.SetDestination (randomPoint);
 		}
+
+		
 	}
 
-	private void ChangeDirection() {
-		float angle = Random.Range(0f, 360f);
-		Quaternion quat = Quaternion.AngleAxis(angle, Vector3.forward);
-		Vector3 newUp = quat * Vector3.up;
-		newUp.z = 0;
-		newUp.Normalize();
-		transform.up = newUp;
-		timeToChangeDirection = Random.Range(10f,60f);
-	}
+
 
 
 
