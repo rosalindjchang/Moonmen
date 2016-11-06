@@ -1802,8 +1802,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfe6b74536ba343dba2baed52f6c9695, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingHealth: 100
-  currentHealth: 0
   sinkSpeed: 2.5
 --- !u!135 &135000011106767762
 SphereCollider:
