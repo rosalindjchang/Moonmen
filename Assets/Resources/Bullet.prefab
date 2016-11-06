@@ -23,7 +23,7 @@ GameObject:
   - 135: {fileID: 135000012462293374}
   - 23: {fileID: 23000010236985934}
   - 54: {fileID: 54000013240049126}
-  - 114: {fileID: 114000013099018352}
+  - 114: {fileID: 114000011130630860}
   m_Layer: 0
   m_Name: Bullet
   m_TagString: bullet
@@ -93,9 +93,9 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 4
+  m_Constraints: 36
   m_CollisionDetection: 0
---- !u!114 &114000013099018352
+--- !u!114 &114000011130630860
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -103,7 +103,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1000010615893130}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 19d565379cb01480794179f2e39a6707, type: 3}
+  m_Script: {fileID: 11500000, guid: 3e42275ce7e9e40108212239da6ced8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!135 &135000012462293374
