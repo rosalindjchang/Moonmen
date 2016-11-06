@@ -10,7 +10,8 @@ public class MaterialFade : MonoBehaviour
 	private Material m_Material0;   // Used to store material reference.
 	private Material m_Material1; 
 	private Color m_Color0;            // Used to store color reference.
-	private Color m_Color1;  
+	private Color m_Color1; 
+	float alpha=0.0f;
 
 
 	void Start ()
@@ -25,14 +26,31 @@ public class MaterialFade : MonoBehaviour
 
 		// Must use "StartCoroutine()" to execute 
 		// methods with return type of "IEnumerator".
-		StartCoroutine (ColorFade ());
+
+
 	}
 
+
+	void Update(){
+		
+		if (GetComponent<ShadowFinder> ().InShadows) {
+			StartCoroutine (AlphaFadeIn ());
+		} else {
+			StartCoroutine (AlphaFadeOut ());
+		}
+	}
+
+
+
+
+
+
+
 	// This method fades only the alpha.
-	IEnumerator AlphaFade ()
+		IEnumerator AlphaFadeOut ()
 	{
 		// Alpha start value.
-		float alpha = 1.0f;
+		//float alpha = 1.0f;
 
 		// Loop until aplha is below zero (completely invisalbe)
 		while (alpha > 0.0f)
@@ -52,21 +70,32 @@ public class MaterialFade : MonoBehaviour
 
 
 	// This method fades from original color to "fadeColor"
-	IEnumerator ColorFade ()
+
+
+
+	IEnumerator AlphaFadeIn ()
 	{
-		// Lerp start value.
-		float change = 0.0f;
+		// Alpha start value.
+		//float alpha = 0.0f;
 
-		// Loop until lerp value is 1 (fully changed)
-		while (change < 1.0f)
+		// Loop until aplha is below zero (completely invisalbe)
+		while (alpha <= 1.0f)
 		{
-			// Reduce change value by fadeSpeed amount.
-			change += fadeSpeed * Time.deltaTime;
+			// Reduce alpha by fadeSpeed amount.
+			alpha += fadeSpeed * Time.deltaTime;
 
-			m_Material0.color = Color.Lerp (m_Color0, fadeColor, change);
-			m_Material1.color = Color.Lerp (m_Color1, fadeColor, change);
+			// Create a new color using original color RGB values combined
+			// with new alpha value. We have to do this because we can't 
+			// change the alpha value of the original color directly.
+			m_Material0.color = new Color (m_Color0.r, m_Color0.g, m_Color0.b, alpha);
+			m_Material1.color = new Color (m_Color1.r, m_Color1.g, m_Color1.b, alpha);
 
 			yield return null;
 		}
 	}
+
+
+
+
+
 }

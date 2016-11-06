@@ -9,10 +9,9 @@ public class ShadowFinder : MonoBehaviour {
 	void Start () {
 		sun = GameObject.Find ("Sun");
 	}
-	
+
 	// Update is called once per frame
 	void FixedUpdate () {
-
 		Vector3 sunPos = sun.transform.position - gameObject.transform.position;
 
 		RaycastHit hit;

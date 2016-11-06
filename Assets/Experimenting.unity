@@ -177,6 +177,23 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!1 &240244281 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1000011310514620, guid: 56d50ff2f43794e12b072d639c75b474,
+    type: 2}
+  m_PrefabInternal: {fileID: 478927437}
+--- !u!114 &240244282
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 240244281}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fe80743c834a4b2a954a87afe45f2f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  InShadows: 0
 --- !u!1001 &478927437
 Prefab:
   m_ObjectHideFlags: 0
@@ -215,21 +232,6 @@ Prefab:
     - target: {fileID: 4000011137413064, guid: 56d50ff2f43794e12b072d639c75b474, type: 2}
       propertyPath: m_RootOrder
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 137000013262760410, guid: 56d50ff2f43794e12b072d639c75b474,
-        type: 2}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 137000013262760410, guid: 56d50ff2f43794e12b072d639c75b474,
-        type: 2}
-      propertyPath: m_CastShadows
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114000012850626316, guid: 56d50ff2f43794e12b072d639c75b474,
-        type: 2}
-      propertyPath: fadeSpeed
-      value: 0.285
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 56d50ff2f43794e12b072d639c75b474, type: 2}
