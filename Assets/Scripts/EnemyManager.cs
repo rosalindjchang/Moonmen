@@ -4,11 +4,11 @@ using System.Collections;
 public class EnemyManager : MonoBehaviour {
 
 	public GameObject enemy;
-	public float spawnTime = 3;
+	public float spawnTime = 10f;
 	public Transform[] spawnPoints;
 
 	void Start () {
-		InvokeRepeating ("Spawn", spawnTime, spawnTime);
+		InvokeRepeating ("Spawn", spawnTime, 30f);
 	}
 		
 	

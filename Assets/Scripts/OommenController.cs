@@ -21,7 +21,7 @@ public class OommenController : MonoBehaviour {
 		//randomPoint = new Vector3(Random.Range(-8.0F, 8.0F), 0, Random.Range(-4.5F, 4.5F));
 		randomPoint = Random.insideUnitSphere*200;
 		randomPoint.y = 0;
-		//moonmen = GameObject.FindGameObjectWithTag ("moonmen").transform;
+		moonmen = GameObject.FindGameObjectWithTag ("moonmen").transform;
 		oommen = transform;
 		nav = GetComponent<NavMeshAgent> ();
 
@@ -31,10 +31,15 @@ public class OommenController : MonoBehaviour {
 	void Update () {
 
 		distFromPlayer = Vector3.Distance(player.position, oommen.position);
-		//distBetweenMoonOom = Vector3.Distance (moonmen.position, oommen.position);
+		distBetweenMoonOom = Vector3.Distance (moonmen.position, oommen.position);
 
 		if (distFromPlayer < 15f) {
 			nav.SetDestination (player.position);
+
+			if (distBetweenMoonOom < 10f) {
+				nav.SetDestination (randomPoint);
+			}
+				
 		} else {
 			nav.SetDestination (randomPoint);
 		}
