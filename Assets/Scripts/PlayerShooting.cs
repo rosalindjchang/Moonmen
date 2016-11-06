@@ -54,7 +54,7 @@ public class PlayerShooting : MonoBehaviour {
 		gunline.SetPosition (0, transform.position);
 
 		shootRay.origin = transform.position;
-		shootRay.direction = transform.position;
+		shootRay.direction = transform.forward;
 
 		if (Physics.Raycast (shootRay, out shootHit, range, shootableMask)) {
 			EnemyHealth enemyHealth = shootHit.collider.GetComponent<EnemyHealth> ();
