@@ -509,7 +509,7 @@ Light:
   serializedVersion: 7
   m_Type: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 0.36
+  m_Intensity: 1.07
   m_Range: 10
   m_SpotAngle: 30
   m_CookieSize: 10
@@ -530,7 +530,7 @@ Light:
     m_Bits: 4294967295
   m_Lightmapping: 4
   m_AreaSize: {x: 1, y: 1}
-  m_BounceIntensity: 1
+  m_BounceIntensity: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
 --- !u!4 &705957471
@@ -863,7 +863,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -1205,6 +1205,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4000011137413064, guid: 56d50ff2f43794e12b072d639c75b474, type: 2}
       propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000012850626316, guid: 56d50ff2f43794e12b072d639c75b474,
+        type: 2}
+      propertyPath: fadeSpeed
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
