@@ -19,13 +19,16 @@ public class WorldBuilder : MonoBehaviour {
 		TerrainRight = TerrainLeft + TerrainWidth;
 		TerrainTop = TerrainBottom + TerrainLength;
 
-		InstantiatetreePosition ("oommen", 10, 0f);
+		InstantiatetreePosition ("oommen", 29, 0f);
 		InstantiatetreePosition ("tree", 100, 0f);
 		InstantiatetreePosition ("talltree", 200, 0f);
 		InstantiatetreePosition ("fattree", 300, 0f);
+
+		InstantiateshrubPosition ("shrub1", 60, 0f);
+		InstantiateshrubPosition ("shrub2", 60, 0f);
 	}
 
-	public void InstantiateRandomPosition(string Resource, int Amount, float AddedHeight) {
+	public void InstantiateshrubPosition(string Resource, int Amount, float AddedHeight) {
 
 		//define variable
 		var i = 0;
@@ -37,7 +40,7 @@ public class WorldBuilder : MonoBehaviour {
 		//loop through amount of times wanna instantiate
 		do {
 			i++;
-			randomPositionX = Random.Range (TerrainLeft, TerrainRight);
+			randomPositionX = Random.Range (TerrainLeft-(TerrainLeft*2/3),TerrainRight-(TerrainRight*2/3));
 			randomPositionZ = Random.Range (TerrainBottom, TerrainTop);
 
 			//generate random position
