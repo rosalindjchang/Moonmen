@@ -39,10 +39,7 @@ public class OommenController : MonoBehaviour {
 		if (distFromPlayer < 20f) {
 			nav.speed = 4.8f;
 
-			if (distBetweenMoonOom < 20f) {
-				nav.SetDestination (randomPoint);
-
-			} else if (distFromeHome < 20f) {
+			 if (distFromeHome < 20f) {
 				nav.SetDestination (home.position);
 			} else {
 				nav.SetDestination (player.position);
