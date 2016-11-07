@@ -23,6 +23,10 @@ public class MaterialFadeSingle : MonoBehaviour
 		// Get material's starting color value.
 		m_Color0 = m_Material0.color;
 
+		alpha=0.0f;
+
+			StartCoroutine (AlphaFadeOut());
+		
 
 		// Must use "StartCoroutine()" to execute 
 		// methods with return type of "IEnumerator".
