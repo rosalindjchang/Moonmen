@@ -37,18 +37,11 @@ public class OommenController : MonoBehaviour {
 		distBetweenMoonOom = Vector3.Distance (oommen.position, moonmen.position);
 
 
-		if (distBetweenMoonOom < 20f) {
-			nav.SetDestination (randomPoint);
-			Debug.Log ("YESSSS");
-
-		}
-
 		if (distFromPlayer < 20f) {
 			nav.speed = 4.8f;
 
 			if (distBetweenMoonOom < 20f) {
 				nav.SetDestination (randomPoint);
-				//Debug.Log ("YESSSS");
 
 			} else if (distFromeHome < 20f) {
 				nav.SetDestination (home.position);
