@@ -13,11 +13,15 @@ public class EnemyHealth : MonoBehaviour {
 	void Update () {
 		if (isSinking) {
 			transform.Translate (-Vector3.up * sinkSpeed * Time.deltaTime);
+		} else {
+			GetComponent<NavMeshAgent> ().enabled = true;
+
 		}
 	}
 		
 
 	void OnTriggerEnter (Collider col) {
+		
 		if (col.tag == "bullet") {
 			StartSinking ();
 		}
@@ -28,6 +32,6 @@ public class EnemyHealth : MonoBehaviour {
 		GetComponent<Rigidbody> ().isKinematic = true;
 		isSinking = true;
 
-		Destroy (gameObject, 2f);
+		//Destroy (gameObject, 2f);
 	}
 }

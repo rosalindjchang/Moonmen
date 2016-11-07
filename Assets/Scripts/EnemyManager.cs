@@ -8,7 +8,7 @@ public class EnemyManager : MonoBehaviour {
 	public Transform[] spawnPoints;
 
 	void Start () {
-		InvokeRepeating ("Spawn", spawnTime, 30f);
+		InvokeRepeating ("Spawn", spawnTime, 10f);
 	}
 
 
