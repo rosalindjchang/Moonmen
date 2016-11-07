@@ -13,10 +13,7 @@ public class EnemyHealth : MonoBehaviour {
 	void Update () {
 		if (isSinking) {
 			transform.Translate (-Vector3.up * sinkSpeed * Time.deltaTime);
-		} else {
-			GetComponent<NavMeshAgent> ().enabled = true;
-
-		}
+		} 
 	}
 		
 

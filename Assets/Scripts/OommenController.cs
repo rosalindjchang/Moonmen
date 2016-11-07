@@ -20,7 +20,6 @@ public class OommenController : MonoBehaviour {
 
 	void Awake () {
 		player = GameObject.FindGameObjectWithTag ("Player").transform;
-		//randomPoint = new Vector3(Random.Range(-8.0F, 8.0F), 0, Random.Range(-4.5F, 4.5F));
 		randomPoint = Random.insideUnitSphere*200;
 		randomPoint.y = 0;
 		moonmen = GameObject.FindGameObjectWithTag ("moonmen").transform;
