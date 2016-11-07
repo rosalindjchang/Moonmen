@@ -180,6 +180,10 @@ Prefab:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: c10a6215cd77945619001830c9fd1e48, type: 2}
+    - target: {fileID: 100014, guid: 9a13dfc497ede49bd9422bbb120dd788, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9a13dfc497ede49bd9422bbb120dd788, type: 3}
   m_IsPrefabParent: 0
@@ -1546,7 +1550,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100002, guid: af95ca5da3f0c46589996f03a908f4e8, type: 3}
       propertyPath: m_TagString
-      value: Untagged
+      value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: af95ca5da3f0c46589996f03a908f4e8, type: 3}
